@@ -1,14 +1,25 @@
-# Project
+## ClipboardEnhancer
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+On a daily basis security analysts are constantly copying indicators from one source to another to perform analysis, conduct research, and document findings.
+Along the way this information changes forms multiple times and, as a result, means that the user is either using notepad or some other text editor as a working buffer to transform the content.
+This is a huge time-sink that can be eliminated by automating the most frequently performed tasks.
 
-As the maintainer of this project, please make a few updates:
+Solution Components:
+* User Interface
+  * Clipboard history
+  * Extracted indicators
+  * Translation shortcuts
+* User configurable indicator rules/types
+* User configurable enrichment sources
+* User configurable transformations
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Common Actions:
+* Extract: URLs, domains, hashes, email addresses, UUIDs
+* Lookup: Threat feeds, whois, Kusto
+* Generate URL hashes
+* Translate lists (line delimited to quoted comma delimited)
+* Sanitize/remove characters
+* De/Refang URLs
 
 ## Contributing
 
