@@ -4,11 +4,22 @@ On a daily basis security analysts are constantly copying indicators from one so
 Along the way this information changes forms multiple times and, as a result, means that the user is either using notepad or some other text editor as a working buffer to transform the content.
 This is a huge time-sink that can be eliminated by automating the most frequently performed tasks.
 
+Terminology:
+* Clipboard: System clipboard - populated when user presses CTRL-c
+* Artifact: sub-string/component extracted from clipboard
+* Clipboard shortcut: macro that modifies the contents of the clipboard
+* Artifact shortcut: macro or function that transforms an artifact.  Examples:
+  * Base64 string - decode to plaintext
+  * Url - re/defang (enable/prevent automatic hyperlink)
+* Artifact lookup: query datasource for artifact details/context
+
+
 Solution Components:
-* User Interface
-  * Clipboard history
+* User Interface - Main Window (tab view)
+  * Clipboard history (scrollable grid containing timestamp, application name, clipboard preview), ability to delete entries
   * Extracted indicators
   * Translation shortcuts
+  * Json configuration file
 * User configurable indicator rules/types
 * User configurable enrichment sources
 * User configurable transformations
