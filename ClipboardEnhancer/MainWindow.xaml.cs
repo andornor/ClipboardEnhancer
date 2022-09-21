@@ -49,6 +49,9 @@ namespace ClipboardEnhancer
             Debug.WriteLine(e.SourceApplication.Name);
             Debug.WriteLine(e.SourceApplication.Title);
             _logger.LogInformation("Clipboard data changed to: {val}", Clipboard.ClipboardText);
+
+            //Set clipboard text
+            ClipboardText.Text = Clipboard.ClipboardText;
         }
     }
 }

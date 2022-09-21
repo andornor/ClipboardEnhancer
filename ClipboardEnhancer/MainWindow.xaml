@@ -16,7 +16,7 @@
 
             </TabItem>
             <TabItem Header="Clipboard">
-                <TextBox AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
+                <TextBox Name="ClipboardText" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
             </TabItem>
             <TabItem Header="History">
                 <TextBlock>placeholder</TextBlock>
