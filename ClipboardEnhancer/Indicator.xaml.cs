@@ -13,8 +13,7 @@ namespace ClipboardEnhancer.User_Controls
         {
             InitializeComponent();
             this.DataContext = this;
-            //this.Type = "ahha";
-            
+            //this.Type = new string("ahha");
         }
 
         public string Type { get; set; }
