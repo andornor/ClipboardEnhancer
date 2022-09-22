@@ -13,7 +13,7 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Main">
-
+                <TextBox Name="MainText" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
             </TabItem>
             <TabItem Header="Clipboard">
                 <TextBox Name="ClipboardText" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
