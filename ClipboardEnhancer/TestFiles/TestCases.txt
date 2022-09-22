@@ -1,0 +1,12 @@
+﻿// Email address extraction
+
+Email regex: ([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})
+
+My email address is bstephan@microsoft.com <- it should be extracted by the ClipboardEnhancer
+Other random inputs that this should not extract would be root@localhost or Twitter-like tags @DataScience
+Things that look like valid emails but will not hit are: a@a.a or crazy!stuff@yahoo.com or user@my.invalidtld
+Other happy email addresses
+no-reply@gstatic.com
+inspector_gadget@pub.co.uk
+vlad@sputnik.ru
+not valid but will still get picked up by the regex - well...th@ts.not.right
