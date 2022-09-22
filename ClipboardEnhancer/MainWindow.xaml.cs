@@ -13,13 +13,9 @@ namespace ClipboardEnhancer
     public partial class MainWindow : Window
     {
 
-        
-
-
         public SharpClipboard Clipboard;
-
         private readonly ILogger<MainWindow> _logger;
-
+        private LastClipboardTexts lastClipboardTexts;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +34,9 @@ namespace ClipboardEnhancer
             Clipboard = new SharpClipboard();
             Clipboard.ClipboardChanged += ClipboardChanged;
 
+            lastClipboardTexts = new LastClipboardTexts();
+
+
         }
 
         private void ClipboardChanged(Object? sender, WK.Libraries.SharpClipboardNS.SharpClipboard.ClipboardChangedEventArgs e)
@@ -50,8 +49,13 @@ namespace ClipboardEnhancer
             Debug.WriteLine(e.SourceApplication.Title);
             _logger.LogInformation("Clipboard data changed to: {val}", Clipboard.ClipboardText);
 
-            //Set clipboard text
+            //Set clipboard test in UI
             ClipboardText.Text = Clipboard.ClipboardText;
+
+            //Set clipboard history in UI
+            lastClipboardTexts.AddClipboardText(Clipboard.ClipboardText);
+            HistoryClipboardText.Text = lastClipboardTexts.GetClipboardTextHistory();
+            
         }
     }
 }
