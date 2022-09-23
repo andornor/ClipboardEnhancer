@@ -4,6 +4,7 @@ using System.Windows;
 using WK.Libraries.SharpClipboardNS;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using System.Text.RegularExpressions;
 
 namespace ClipboardEnhancer
 {
@@ -55,6 +56,17 @@ namespace ClipboardEnhancer
             //Set clipboard history in UI
             lastClipboardTexts.AddClipboardText(Clipboard.ClipboardText);
             HistoryClipboardText.Text = lastClipboardTexts.GetClipboardTextHistory();
+
+            //Email
+            Regex regex = new Regex(@"([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})");
+            MatchCollection regMatch = regex.Matches(Clipboard.ClipboardText);
+            foreach (Match match in regMatch)
+            {
+                if (match.Success)
+                {
+                    MainText.Text += match.ToString() + Environment.NewLine;
+                }
+            }
             
         }
     }
