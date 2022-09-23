@@ -1,0 +1,12 @@
+//This file contains some GUID
+Regex for GUID: "(^|[\W_])[0-9a-f]{8}\-[0=9a-f]{4}\-[0-9a-f]{4}\-[0-9a-f]{12}(\W_)|$"
+
+Valid:
+"
+9A4FA56F-EAA0-B7F0-8CA09EA39167
+"
+"9a4FA56F-EaA0-B7f0-8Cf09EA39167";
+"0A0FA50F-EAA1-B7F0-8CA09EA01167";!!
+
+Invalid:
+9A4FA56F!EAA0!B7F0!8CA09EA39167
