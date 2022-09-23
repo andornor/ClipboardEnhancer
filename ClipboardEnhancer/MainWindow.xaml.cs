@@ -58,16 +58,27 @@ namespace ClipboardEnhancer
             HistoryClipboardText.Text = lastClipboardTexts.GetClipboardTextHistory();
 
             //Email
-            Regex regex = new Regex(@"([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})");
-            MatchCollection regMatch = regex.Matches(Clipboard.ClipboardText);
-            foreach (Match match in regMatch)
+            Regex regexEmail = new Regex(@"([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})",RegexOptions.IgnoreCase);
+            MatchCollection regMatchEmail = regexEmail.Matches(Clipboard.ClipboardText);
+            foreach (Match match in regMatchEmail)
             {
                 if (match.Success)
                 {
                     MainText.Text += match.ToString() + Environment.NewLine;
                 }
             }
-            
+
+            //GUID
+            Regex regexGUID = new Regex(@"[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}", RegexOptions.IgnoreCase);
+            MatchCollection regMatchGUID = regexGUID.Matches(Clipboard.ClipboardText);
+            foreach (Match match in regMatchGUID)
+            {
+                if (match.Success)
+                {
+                    MainText.Text += match.ToString() + Environment.NewLine;
+                }
+            }
+
         }
     }
 }
